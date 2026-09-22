@@ -12,21 +12,15 @@ export default function AppTabs() {
       <TabList asChild>
         <CustomTabList>
           <TabTrigger name="dashboard" href="/(tabs)/dashboard" asChild>
-            <TabButton IconComponent={Ionicons} iconName="home" label="Home" />
-          </TabTrigger>
-          <TabTrigger name="search" href="/(tabs)/search" asChild>
-            <TabButton IconComponent={Feather} iconName="search" label="Explore" />
+            <TabButton IconComponent={Ionicons} iconName="home" label="Accueil" />
           </TabTrigger>
           
           <TabTrigger name="add" href="/(tabs)/add" asChild>
             <TabButton IconComponent={Feather} iconName="plus" isCenter />
           </TabTrigger>
           
-          <TabTrigger name="add-client" href="/(tabs)/add-client" asChild>
-            <TabButton IconComponent={Feather} iconName="bell" label="Inbox" />
-          </TabTrigger>
           <TabTrigger name="profile" href="/(tabs)/profile" asChild>
-            <TabButton IconComponent={Feather} iconName="user" label="Profile" />
+            <TabButton IconComponent={Feather} iconName="user" label="Profil" />
           </TabTrigger>
         </CustomTabList>
       </TabList>
@@ -141,10 +135,10 @@ const styles = StyleSheet.create({
     width: 54,
     height: 54,
     borderRadius: 27,
-    backgroundColor: '#6c5ce7',
+    backgroundColor: '#054687',
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: '#6c5ce7',
+    shadowColor: '#054687',
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.38,
     shadowRadius: 18,

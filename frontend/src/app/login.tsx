@@ -4,9 +4,11 @@ import { StyleSheet, TextInput, Pressable, View, Alert, ActivityIndicator } from
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { ThemedText } from '@/components/themed-text';
+import { useAuth } from '@/context/auth-context';
 
 export default function LoginScreen() {
   const router = useRouter();
+  const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -30,7 +32,11 @@ export default function LoginScreen() {
       const data = await response.json();
       
       if (response.ok) {
-        // Successful login, navigate to dashboard
+        // Successful login, enregistrement utilisateur
+        if (data.user && data.token) {
+          login(data.user, data.token);
+        }
+        // Navigate to dashboard
         router.replace('/(tabs)/dashboard');
       } else {
         Alert.alert('Login Failed', data.message || 'Invalid credentials');
